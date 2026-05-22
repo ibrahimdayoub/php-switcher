@@ -10,15 +10,14 @@ Laravel has different PHP requirements depending on the version:
 
 | Laravel Version | PHP Required |
 |-----------------|--------------|
-| 6.x             | 7.2 – 8.0    |
-| 7.x             | 7.2 – 8.0    |
 | 8.x             | 7.3 – 8.1    |
 | 9.x             | 8.0 – 8.2    |
 | 10.x            | 8.1 – 8.3    |
 | 11.x            | 8.2 – 8.4    |
-| 12.x            | 8.3+          |
+| 12.x            | 8.3+         |
 
-If your XAMPP only has one PHP version, you may face errors when working on both legacy and modern Laravel projects. This script solves that by **swapping a symlink** to point to whichever PHP version you need.
+If your XAMPP only *has one PHP version*, you may face errors when working on both *legacy and modern* Laravel projects.
+This script solves that by **swapping a symlink** to point to whichever PHP version you need.
 
 ---
 
@@ -30,9 +29,7 @@ Your XAMPP folder typically looks like this:
 C:\xampp\
   ├── php74\        ← PHP 7.4 binaries
   ├── php80\        ← PHP 8.0 binaries
-  ├── php81\        ← PHP 8.1 binaries
   ├── php82\        ← PHP 8.2 binaries
-  ├── php83\        ← PHP 8.3 binaries
   └── php\          ← SYMLINK → points to one of the above
 ```
 
@@ -41,10 +38,10 @@ When you run the script, it:
 1. Shows the currently active PHP version
 2. Lists all available PHP versions with their compatible Laravel range
 3. Removes the existing `php` junction
-4. Creates a new junction pointing to your chosen version
+4. Creates a new junction *pointing* to your chosen version
 5. Prompts you to restart your terminal
 
-No files are copied or deleted — only the directory link changes, making the switch **instant**.
+**No** files are copied or deleted — only the directory link changes, making the switch **instant**.
 
 ---
 
@@ -53,7 +50,7 @@ No files are copied or deleted — only the directory link changes, making the s
 - **Windows** 10 / 11
 - **PowerShell 5.1+** (comes with Windows)
 - **XAMPP** installed at `C:\xampp`
-- **PHP folders** inside XAMPP named `php74`, `php80`, `php81`, `php82`, etc.
+- **PHP folders** inside XAMPP named `php74`, `php80`, `php82`, etc.
 - **Administrator privileges** (the script enforces this)
 
 > 💡 If your XAMPP is installed elsewhere, edit `$xamppDir` in `switch-php.ps1`.
@@ -65,15 +62,19 @@ No files are copied or deleted — only the directory link changes, making the s
 1. Clone or copy the files to your machine:
 
 ```
-git clone https://github.com/your-username/php-switcher.git
+git clone https://github.com/ibrahimdayoub/php-switcher.git
 cd php-switcher
 ```
 
 2. **(Recommended)** Add the folder to your `PATH` so you can run the script from anywhere:
 
-   - Open **System Properties → Environment Variables**
-   - Under `Path`, add the full path to this folder
-   - Open a **new** PowerShell window
+  - Open **System Properties → Environment Variables**
+   - Under `System variables` (or `User variables`), select `Path` and click **Edit**
+   - Click **new** and add the full path to the `php-switcher` folder
+   - Open a **new** PowerShell or CMD window and run:
+   ```bash
+     switch-php
+   ```
 
 3. Add missing PHP versions to XAMPP:
 
@@ -87,16 +88,14 @@ cd php-switcher
 
 ### Method 1 — Double-click the batch file (auto admin)
 
-```
-Just double-click  switch-php.bat
-```
-It will auto-elevate to Administrator via UAC.
+- **Option A (Easiest):** Just **double-click** `switch-php.bat`. It will automatically trigger the Windows UAC prompt to elevate to Administrator.
+- **Option B:** Right-click `switch-php.bat` and select **Run as administrator**.
 
 ### Method 2 — Run PowerShell as Admin manually
 
 ```
 1. Open PowerShell as Administrator
-2. cd "C:\Users\Ibrahim\Desktop\PHP Switcher"
+2. cd "C:\path\to\your\cloned\php-switcher"
 3. .\switch-php.ps1
 ```
 
@@ -145,4 +144,4 @@ That's it — the new version will appear in the menu automatically.
 
 ## License
 
-MIT
+This project is licensed under the [MIT License](LICENSE).
