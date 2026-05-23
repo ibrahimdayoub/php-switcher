@@ -4,6 +4,14 @@
 
 ---
 
+## Preview
+
+See how easily you can switch your environment with a single command:
+
+![PHP Version Switcher Preview](screenshot.png)
+
+---
+
 ## Overview
 
 Laravel has different PHP requirements depending on the version:
@@ -30,6 +38,7 @@ C:\xampp\
   ├── php74\        ← PHP 7.4 binaries
   ├── php80\        ← PHP 8.0 binaries
   ├── php82\        ← PHP 8.2 binaries
+  ├── php83\        ← PHP 8.3 binaries
   └── php\          ← SYMLINK → points to one of the above
 ```
 
@@ -79,7 +88,7 @@ cd php-switcher
 3. Add missing PHP versions to XAMPP:
 
    - Download the desired PHP version from [windows.php.net](https://windows.php.net/download/)
-   - Extract it to `C:\xampp\php83` (e.g. for PHP 8.3)
+   - Extract it to `C:\xampp\php84` (e.g. for PHP 8.4)
    - Copy `php.ini-development` as `php.ini` and adjust settings
 
 ---
